@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    overflow: auto;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    min-width: 160px;
+    overflow-x: hidden;
+}
+
+header {
+    /* headerを画面上部に固定する */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* ロゴとナビゲーションを横並びにする */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* スクロールしても他のコンテンツの下にならないようにする */
+    z-index: 1000;
+    /* 背景色を黒にする */
+    background: #000;
+    /* headerに余白を作る */
+    padding: 25px 15px;
+    /* アニメーションの変化時間 */
+    transition: 0.5s;
+}
+
+
+/* ロゴのデザイン */
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    /* アニメーションの変化時間 */
+    transition: 0.5s;
+}
+
+
+/* ナビゲーションのリンクを横並びにする */
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header li {
+    list-style: none;
+    margin: 10px;
+}
+
+
+/* ナビゲーションのリンクのスタイル調整 */
+
+header a {
+    display: inline-block;
+    margin-left: 12px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    /* アニメーションの変化時間 */
+    transition: 0.5s;
+}
+
+
+/* スクロールするため高さを出すためのsection */
+
+.section-a {
+    color: black;
+}
+
+.head_picture_inf {
+    position: relative;
+}
+
+.head_picture_inf h1 {
+    font-size: 3em;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-bottom: double 5px #FFC778;
+    font-family: 'Cherry Swash', cursive;
+}
+
+.head_picture_inf img {
+    width: 100%;
+}
+
+.news_space {
+    position: relative;
+    color: black;
+    text-align: left;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 3% 7%;
+    padding: 0px;
+}
+
+
+/*新着情報の文字部分の設定*/
+
+.news_viewer {
+    margin: 10px 30px;
+}
+
+.news_viewer h2 {
+    padding: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/*===Newsリスト群===*/
+
+.news-list {
+    list-style: none outside;
+    margin: 0;
+    padding: 0;
+}
+
+.news-list .item a {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #CCC;
+    padding: 20px 20px;
+}
+
+.news-list .item:first-child a {
+    border-top: 1px solid #CCC;
+}
+
+.news-list .item .date {
+    margin: 0;
+    min-width: 140px;
+    font-size: 16px;
+    color: #999;
+    padding: 0 20px 0 0;
+}
+
+
+/*=Category別新着情報欄の設定=*/
+
+
+/*==”お知らせ（灰）”についての設定*/
+
+.news-list .item .category {
+    margin: 0;
+    min-width: 140px;
+    padding: 0 20px 0 0;
+}
+
+.news-list .item .category span {
+    background: #999;
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+
+/*==”更新中（赤）”についての設定*/
+
+.news-list .item .category_red {
+    margin: 0;
+    min-width: 140px;
+    padding: 0 20px 0 0;
+}
+
+.news-list .item .category_red span {
+    background: red;
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.news-list .item .category_blue {
+    margin: 0;
+    min-width: 140px;
+    padding: 0 20px 0 0;
+}
+
+.news-list .item .category_blue span {
+    background: skyblue;
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+
+/*itemやtitleについての設定*/
+
+.news-list .item .title {
+    margin: 0;
+    width: 100%;
+}
+
+.news-list .item a:hover .title {
+    color: #00F;
+}
+
+.all_category {
+    color: red;
+    margin: 30px;
+    text-align: right;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .news-list .item a {
+        flex-wrap: wrap;
+    }
+    .news-list .item .date {
+        min-width: 100px;
+    }
+    .news-list .item .title {
+        margin-top: 10px;
+    }
+}
+
+.section-b {
+    background: #fff;
+}
+
+
+/* スクロールして「scroll-navクラス」がついたときのヘッダーデザイン */
+
+header.scroll-nav {
+    /* 余白を狭くする */
+    padding: 10px 15px;
+    /* 背景を白にする */
+    background: #fff;
+    /* コンテンツの背景が白でもナビゲーションだと分かりやすいように影をつける */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
